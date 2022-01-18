@@ -4,6 +4,7 @@ public class Program
 {
     public static void Main()
     {
-        Tests.TestMatchOne();        
+        Tests.TestMatchOne();     
+        Tests.TestMatch();   
     }
 }
