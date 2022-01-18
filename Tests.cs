@@ -10,13 +10,11 @@ public static class Tests
 
     public static void TestMatchOne()
     {
-        var textToPattern = new List<Tuple<bool, string, string>>()
+        var textToPattern = new List<Tuple<bool, char, char>>()
         {
-            new Tuple<bool, string, string>(true, "a", "a"),
-            new Tuple<bool, string, string>(true, "a", "."),
-            new Tuple<bool, string, string>(true, "a", ""),
-            new Tuple<bool, string, string>(false, "a", "b"),
-            new Tuple<bool, string, string>(false, "", "b")
+            new Tuple<bool, char, char>(true, 'a', 'a'),
+            new Tuple<bool, char, char>(true, 'a', '.'),
+            new Tuple<bool, char, char>(false, 'a', 'b'),
         };
         int errorCounter = 0;
 
