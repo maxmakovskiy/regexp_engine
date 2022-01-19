@@ -6,5 +6,9 @@ public class Program
     {
         Tests.TestMatchOne();     
         Tests.TestMatch();   
+        Tests.TestMatchEnd();
+        Tests.TestMatchBegin();
+        Tests.TestSearch();
+        Tests.Test0or1Times();
     }
 }
