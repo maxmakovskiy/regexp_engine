@@ -10,5 +10,6 @@ public class Program
         Tests.TestMatchBegin();
         Tests.TestSearch();
         Tests.Test0or1Times();
+        Tests.Test0orMore();
     }
 }

@@ -83,6 +83,20 @@ public static class Tests
         Test(Match, textToPattern, System.Reflection.MethodBase.GetCurrentMethod().Name);
     }
 
+    public static void Test0orMore()
+    {
+        var textToPattern = new List<Tuple<bool, string, string>>()
+        {
+            Tuple.Create(true, "abbbbbb", "ab*"),
+            Tuple.Create(true, "a", "ab*"),
+            Tuple.Create(true, "ab", "ab*"),
+            Tuple.Create(true, "ab", "a*b*"),
+            Tuple.Create(true, "", "a*b*"),
+        };
+
+        Test(Match, textToPattern, System.Reflection.MethodBase.GetCurrentMethod().Name);
+    }
+
     private static void Test<T>(Func<T, T, bool> func, List<Tuple<bool, T, T>> textToPattern, string testName)
     {
         int errorCounter = 0;

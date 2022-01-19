@@ -16,8 +16,22 @@ public static class RegexpEngine
             return true;
         } else if (pattern.Length > 1 && pattern[1] == '?') {
             return matchQuestion(text, pattern);
+        } else if (pattern.Length > 1 && pattern[1] == '*') {
+            return matchStar(text, pattern);
         } else {
             return MatchOne(text[0], pattern[0]) && Match(text.Substring(1), pattern.Substring(1));
+        }
+    }
+
+    private static bool matchStar(string text, string pattern)
+    {
+        if (pattern.Length == 2 && text.Length == 0) {
+           return true; 
+        } else if (text.Length == 0) { 
+           return Match(text, pattern.Substring(2));
+       } else {
+            return (MatchOne(text[0], pattern[0]) && Match(pattern, text.Substring(1))) 
+                || Match(text, pattern.Substring(2));
         }
     }
 
